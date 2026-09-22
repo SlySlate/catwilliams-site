@@ -63,7 +63,7 @@ nav ul a:hover{color:var(--paper)}
 @keyframes roam{0%{transform:translate(18vw,-22vh)}33%{transform:translate(-22vw,8vh)}66%{transform:translate(12vw,24vh)}100%{transform:translate(-14vw,-10vh)}}
 header,main,footer{position:relative;z-index:1}
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:120px 0 80px}
-.stagebg{position:absolute;inset:0;background:url(assets/stage.jpg) center/cover no-repeat;opacity:.22;mix-blend-mode:screen;transform:scale(1.1);pointer-events:none}
+.stagebg{position:absolute;inset:0;background:url(stage.jpg) center/cover no-repeat;opacity:.22;mix-blend-mode:screen;transform:scale(1.1);pointer-events:none}
 .stagebg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 85% 80% at 60% 40%,transparent,rgba(12,5,6,.8) 80%)}
 #pills{position:absolute;inset:0;overflow:hidden;pointer-events:none}
 .pill{position:absolute;left:0;top:0;width:var(--w);height:calc(var(--w)*.42);border-radius:999px;pointer-events:none;will-change:transform;
@@ -231,7 +231,7 @@ footer p{margin:0 0 8px;max-width:78ch}
 
 <nav id="nav">
   <div class="wrap">
-    <a class="brand" href="#top"><img src="assets/mascot.jpg" alt="">$CAT Williams</a>
+    <a class="brand" href="#top"><img src="mascot.jpg" alt="">$CAT Williams</a>
     <ul>
       <li><a href="#rewards">Rewards</a></li>
       <li><a href="#screening">Screening room</a></li>
@@ -259,7 +259,7 @@ footer p{margin:0 0 8px;max-width:78ch}
       </dl>
     </div>
     <div class="marquee" id="marquee">
-      <div class="screen" id="screen"><img src="assets/mascot.jpg" alt="$CAT Williams in a green suit and gold chains, pointing at the viewer with a microphone in hand"></div>
+      <div class="screen" id="screen"><img src="mascot.jpg" alt="$CAT Williams in a green suit and gold chains, pointing at the viewer with a microphone in hand"></div>
       <div class="plate">TONIGHT ONLY</div>
     </div>
   </div>
@@ -320,14 +320,14 @@ footer p{margin:0 0 8px;max-width:78ch}
       <p class="sub">Tap a clip to put it on the big screen.</p>
     </div>
     <div class="player">
-      <video id="main" muted playsinline autoplay preload="auto" poster="assets/p_snack.jpg"></video>
+      <video id="main" muted playsinline autoplay preload="auto" poster="p_snack.jpg"></video>
       <div class="bar"><h3 id="title">Snacking on Solana</h3><button type="button" id="sound">Sound on</button></div>
       <div class="progress" id="prog"></div>
     </div>
     <div class="thumbs" id="thumbs">
-      <button class="thumb" type="button" aria-pressed="true" data-i="0"><img src="assets/p_snack.jpg" alt=""><span>Snacking on Solana</span></button>
-      <button class="thumb" type="button" aria-pressed="false" data-i="1"><img src="assets/p_lambo.jpg" alt=""><span>Lambo through Times Square</span></button>
-      <button class="thumb" type="button" aria-pressed="false" data-i="2"><img src="assets/p_fomo.jpg" alt=""><span>FOMO leap</span></button>
+      <button class="thumb" type="button" aria-pressed="true" data-i="0"><img src="p_snack.jpg" alt=""><span>Snacking on Solana</span></button>
+      <button class="thumb" type="button" aria-pressed="false" data-i="1"><img src="p_lambo.jpg" alt=""><span>Lambo through Times Square</span></button>
+      <button class="thumb" type="button" aria-pressed="false" data-i="2"><img src="p_fomo.jpg" alt=""><span>FOMO leap</span></button>
     </div>
   </div>
 </section>
@@ -484,9 +484,9 @@ requestAnimationFrame(()=>setTimeout(()=>document.body.classList.add('lit'),120)
 /* screening room */
 (function(){
   const clips=[
-    {t:'Snacking on Solana',src:'assets/snack.mp4',p:'assets/p_snack.jpg'},
-    {t:'Lambo through Times Square',src:'assets/lambo.mp4',p:'assets/p_lambo.jpg'},
-    {t:'FOMO leap',src:'assets/fomo.mp4',p:'assets/p_fomo.jpg'}];
+    {t:'Snacking on Solana',src:'snack.mp4',p:'p_snack.jpg'},
+    {t:'Lambo through Times Square',src:'lambo.mp4',p:'p_lambo.jpg'},
+    {t:'FOMO leap',src:'fomo.mp4',p:'p_fomo.jpg'}];
   const v=document.getElementById('main'),title=document.getElementById('title'),snd=document.getElementById('sound'),prog=document.getElementById('prog');
   const thumbs=[...document.querySelectorAll('.thumb')];let cur=0;
   function load(i){cur=i;v.poster=clips[i].p;v.src=clips[i].src;title.textContent=clips[i].t;
